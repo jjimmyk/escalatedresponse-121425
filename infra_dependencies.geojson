@@ -1,0 +1,88 @@
+{
+    "type": "FeatureCollection",
+    "name": "Tesoro_HI_Impacts",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "tesoro_hawaii_power_plant",
+          "name": "Adversary Unit 001",
+          "asset_type": "power_plant",
+          "notes": "Origin asset"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-158.091438, 21.303229]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "transmission_line_158246_point",
+          "name": "Transmission Line 158246 (representative point)",
+          "asset_type": "transmission_line_point",
+          "line_id": "158246",
+          "line_owner": "HAWAIIAN ELECTRIC CO INC",
+          "voltage_kv": 138
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-158.003089975622, 21.38062233968455]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "kaneohe_mcb_hq",
+          "name": "Kaneohe Marine Corps Base Headquarters",
+          "asset_type": "facility"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-157.75011, 21.44508]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "conn_tesoro_to_line158246",
+          "name": "Dependency: Transmission Line 158246 depends on Adversary Unit 001",
+          "dependency_from": "tesoro_hawaii_power_plant",
+          "dependency_to": "transmission_line_158246_point",
+          "dependency_type": "supply",
+          "stroke": "#FFFF00",
+          "stroke-width": 3,
+          "stroke-opacity": 1
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [-158.091438, 21.303229],
+            [-158.003089975622, 21.38062233968455]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "conn_line158246_to_kaneohe",
+          "name": "Dependency: Kaneohe MCB HQ depends on Transmission Line 158246",
+          "dependency_from": "transmission_line_158246_point",
+          "dependency_to": "kaneohe_mcb_hq",
+          "dependency_type": "delivery",
+          "stroke": "#FFFF00",
+          "stroke-width": 3,
+          "stroke-opacity": 1
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [-158.003089975622, 21.38062233968455],
+            [-157.75011, 21.44508]
+          ]
+        }
+      }
+    ]
+  }
+  
+  
